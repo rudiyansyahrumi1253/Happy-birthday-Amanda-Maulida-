@@ -358,18 +358,24 @@ I love you, sayang. Selalu.
 
 </audio>
   
-
 <script>
 function openBook(){
+
 const cover=document.getElementById('cover');
 const page=document.getElementById('page1');
-cover.style.transform='rotateY(-120deg)';
+const music=document.getElementById('music');
+
+music.volume = 1;
+
+music.play();
+
+cover.style.animation='pageFlip 1.5s ease forwards';
+
 setTimeout(()=>{
 cover.style.display='none';
 page.classList.remove('hidden');
-document.getElementById('music').play();
-},900)
-}
+},1200);
+} 
 </script>
 
 </body>
