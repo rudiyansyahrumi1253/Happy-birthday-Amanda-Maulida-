@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Amanda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      -webkit-user-select:none;
+      user-select:none;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#e8dccb;
+      overflow-x:hidden;
+      color:#4b3425;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      inset:0;
+      background:url('https://www.transparenttextures.com/patterns/old-wall.png');
+      opacity:0.2;
+      z-index:-1;
+    }
+
+    .opening{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      position:relative;
+    }
+
+    .opening h1{
+      font-size:55px;
+      font-family:'Great Vibes',cursive;
+      margin-bottom:10px;
+      color:#6b4b3e;
+      animation:fadeIn 2s ease;
+    }
+
+    .opening p{
+      font-size:18px;
+      margin-bottom:35px;
+      animation:fadeIn 3s ease;
+    }
+
+    .open-btn{
+      padding:16px 55px;
+      border:none;
+      border-radius:20px;
+      background:#8b5e5e;
+      color:white;
+      font-size:22px;
+      cursor:pointer;
+      transition:0.4s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .open-btn:hover{
+      transform:scale(1.08);
+      background:#6f4747;
+    }
+
+    .main{
+      display:none;
+      padding:30px 18px 80px;
+      animation:fadeIn 1.5s ease;
+    }
+
+    .card{
+      max-width:900px;
+      margin:auto;
+      background:rgba(255,255,255,0.6);
+      border-radius:30px;
+      padding:25px;
+      backdrop-filter:blur(6px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .title h2{
+      font-family:'Great Vibes',cursive;
+      font-size:55px;
+      color:#7c5647;
+    }
+
+    .title p{
+      margin-top:8px;
+      font-size:17px;
+    }
+
+    .photo-box{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      margin:25px 0;
+    }
+
+    .photo-frame{
+      background:#fff;
+      padding:15px 15px 45px;
+      border-radius:10px;
+      transform:rotate(-2deg);
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+      animation:float 4s ease-in-out infinite;
+      max-width:330px;
+    }
+
+    .photo-frame img{
+      width:100%;
+      border-radius:8px;
+      display:block;
+    }
+
+    .photo-frame span{
+      display:block;
+      text-align:center;
+      margin-top:15px;
+      font-family:'Great Vibes',cursive;
+      font-size:28px;
+      color:#6b4b3e;
+    }
+
+    .message{
+      margin-top:20px;
+      line-height:2;
+      font-size:17px;
+      white-space:pre-line;
+      text-align:justify;
+      animation:fadeInUp 2s ease;
+    }
+
+    .signature{
+      text-align:right;
+      margin-top:40px;
+      font-family:'Great Vibes',cursive;
+      font-size:40px;
+      color:#6b4b3e;
+    }
+
+    .butterfly{
+      position:fixed;
+      width:60px;
+      z-index:999;
+      animation:fly linear infinite;
+      opacity:0.9;
+    }
+
+    .b1{
+      top:10%;
+      left:-100px;
+      animation-duration:15s;
+    }
+
+    .b2{
+      top:45%;
+      left:-120px;
+      width:45px;
+      animation-duration:18s;
+      animation-delay:3s;
+    }
+
+    .b3{
+      top:70%;
+      left:-130px;
+      width:70px;
+      animation-duration:22s;
+      animation-delay:5s;
+    }
+
+    audio{
+      display:none;
+    }
+
+    @keyframes fly{
+      0%{
+        transform:translateX(0) translateY(0) rotate(0deg);
+      }
+      25%{
+        transform:translateX(30vw) translateY(-40px) rotate(10deg);
+      }
+      50%{
+        transform:translateX(60vw) translateY(20px) rotate(-10deg);
+      }
+      75%{
+        transform:translateX(85vw) translateY(-30px) rotate(8deg);
+      }
+      100%{
+        transform:translateX(120vw) translateY(0px) rotate(0deg);
+      }
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+      }
+      to{
+        opacity:1;
+      }
+    }
+
+    @keyframes fadeInUp{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0px) rotate(-2deg);
+      }
+      50%{
+        transform:translateY(-10px) rotate(-1deg);
+      }
+    }
+
+    @media(max-width:768px){
+      .opening h1{
+        font-size:42px;
+      }
+
+      .title h2{
+        font-size:42px;
+      }
+
+      .message{
+        font-size:15px;
+      }
+
+      .signature{
+        font-size:30px;
+      }
+    }
+  </style>
+</head>
+<body oncontextmenu="return false">
+
+  <img class="butterfly b1" src="https://pngimg.com/d/butterfly_PNG1046.png">
+  <img class="butterfly b2" src="https://pngimg.com/d/butterfly_PNG1046.png">
+  <img class="butterfly b3" src="https://pngimg.com/d/butterfly_PNG1046.png">
+
+  <section class="opening" id="opening">
+    <h1>Happy Birthday Amanda</h1>
+    <p>17 Mei 2002 • 24 Tahun</p>
+    <button class="open-btn" onclick="openWebsite()">Open</button>
+  </section>
+
+  <section class="main" id="main">
+    <div class="card">
+
+      <div class="title">
+        <h2>Happy Birthday</h2>
+        <p>Untuk Amanda Maulida Sa'adah ❤️</p>
+      </div>
+
+      <div class="photo-box">
+        <div class="photo-frame">
+          <img src="656506396_18069468428642903_8959973905855752779_n.jpg" alt="Amanda">
+          <span>ME AND YOU</span>
+        </div>
+      </div>
+
+      <div class="message">
+Happy Birthday
+
+Semoga keinginan baik kita disegerakan.
+Selamat Ulang Tahun, Sayangku. Semoga aku berhasil jadi orang pertama yang ngucapin ini ke kamu. Tapi lebih dari itu semua, yang paling aku syukuri adalah aku masih dipertemukan sama ulang tahun kamu kali ini, masih dikasih kesempatan buat nemenin, buat lihat kamu bertambah umur, bertambah kuat, dan bertambah hebat sampai hari ini.
+Aku harap di umur kamu yang sekarang, semesta bisa lebih banyak berpihak ke kamu. Semoga semua hal yang selama ini kamu perjuangin, semua capek yang kamu simpan diam-diam, semua doa yang sering kamu sebut dalam hati, pelan-pelan mulai menemukan jalannya. Semoga hidup kamu dipenuhi hal-hal baik, dipenuhi orang-orang tulus, dipenuhi ketenangan, dan kebahagiaan yang benar-benar bikin hati kamu tenang.
+Dan semoga, di antara banyak hal baik yang datang ke hidup kamu nanti, aku masih jadi salah satu alasan kamu bertahan sampai sejauh ini.
+ME AND YOU.
+Dua orang yang mungkin sama-sama gak sempurna, tapi selalu berusaha saling ngerti, saling jaga, dan saling pulang satu sama lain. Aku gak tahu gimana masa depan nanti, tapi satu hal yang aku tahu, aku bersyukur banget pernah dipertemukan sama kamu.
+I love you on your birthday, and everyday. Now and forever.
+Bukan cuma hari ini, bukan cuma saat semuanya terasa mudah, tapi juga di hari-hari biasa, di hari yang capek, di hari yang penuh overthinking, bahkan di hari ketika kita sama-sama lagi gak baik-baik aja.
+Aku juga mau bilang terimakasih banyak buat semua yang udah kamu lakuin selama ini. Terimakasih karena udah bertahan sejauh ini sama aku. Terimakasih udah mau nerima semua kurang lebihnya aku, semua sifat aku yang kadang susah dimengerti, semua sikap aku yang mungkin sering bikin kamu cape. Terimakasih buat semua perhatian kecil, semua waktu, semua rasa sabar, semua kasih sayang yang kamu kasih ke aku tanpa pernah aku minta.
+Jujur, aku sadar gak selalu jadi orang yang baik buat kamu.
+Maaf buat semua perilaku yang pernah nyakitin kamu. Maaf kalau aku sering ngerepotin kamu, sering bikin kamu kepikiran, sering bikin kamu harus ngalah. Tapi di balik semua itu, aku cuma mau kamu tahu kalau aku benar-benar bersyukur punya kamu di hidup aku.
+I'm so lucky to have you.
+Dan aku harap, seberat apa pun nanti harinya, sejauh apa pun perjalanan kita ke depan, kamu tetap tinggal. Jangan bosen sama aku, jangan jauh dari aku, tetap sama aku. Karena jujur, aku udah cukup berantakan, dan rasanya bakal lebih berantakan lagi kalau gak sama kamu.
+Semoga ulang tahun kali ini bukan cuma tentang bertambahnya umur, tapi juga tentang bertambahnya bahagia, bertambahnya harapan baik, dan bertambahnya alasan buat terus tersenyum.
+I love you, sayang. Selalu.
+      </div>
+
+      <div class="signature">
+        — Rudiyansyah Jalaluddin Rumi
+      </div>
+
+    </div>
+  </section>
+
+  <audio id="music" loop>
+    <source src="https://files.catbox.moe/1n6b4m.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function openWebsite(){
+      document.getElementById('opening').style.display='none';
+      document.getElementById('main').style.display='block';
+
+      const music=document.getElementById('music');
+      music.play();
+    }
+
+    document.addEventListener('keydown', function(e){
+      if(e.ctrlKey || e.keyCode==123){
+        e.preventDefault();
+      }
+    });
+  </script>
+
+</body>
+</html>
